@@ -28,6 +28,7 @@ import random
 from pathlib import Path
 
 import numpy as np
+import pandas as pd
 import tensorflow as tf
 
 # ======================== CONFIGURATION ========================
@@ -279,6 +280,13 @@ def preprocess(data_dir=None, download_data=True):
 
     print("Splitting data:")
     splits = split_data(all_paths, all_labels)
+
+    # Export to CSV
+    out_dir = dataset_root.parent / "sampah-daur-ulang_preprocessing"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    csv_path = out_dir / "preprocessing_result.csv"
+    pd.DataFrame({"filepath": all_paths, "label": all_labels}).to_csv(csv_path, index=False)
+    print(f"Exported preprocessing results to {csv_path}")
 
     # 5. Build tf.data pipelines
     train_ds = build_dataset(*splits["train"], shuffle=True)

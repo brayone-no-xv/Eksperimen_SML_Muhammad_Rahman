@@ -9,7 +9,7 @@ Repositori ini merupakan **Bagian 1** dari rangkaian proyek sistem *Machine Lear
 ```text
 Eksperimen_SML_Muhammad_Rahman/
 ├── .workflow/
-│   └── main.yml                             # Salinan skrip GitHub Actions
+│   └── main.yml                             # Workflow GitHub Actions
 ├── preprocessing/
 │   ├── Eksperimen_Muhammad_Rahman.ipynb     # Notebook untuk Exploratory Data Analysis (EDA)
 │   ├── automate_Muhammad_Rahman.py          # Skrip otomatisasi pengunduhan & preprocessing dataset
